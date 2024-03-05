@@ -1,0 +1,11 @@
+Armstrong number :is a number that is equal to the sum of cubes of its digits. For example 0, 1, 153, 370, 371 and 407 are the Armstrong numbers.
+
+
+Strong number is a special number whose sum of the factorial of digits is equal to the original number. 
+For Example: 145 is strong number. Since, 1! + 4! + 5! = 145. 
+
+A number is a perfect number if is equal to the sum of its proper divisors, that is, the sum of its positive divisors excluding the number itself.
+
+
+
+palindrome: a word, phrase, or sequence that reads the same backwards as forwards, e.g. madam or nurses run.
