@@ -1,0 +1,1655 @@
+
+------------------------------------------------------------------------29/02/2024-------------------------------------------------------------------------
+
+JAVASCRIPT:
+> Scripting language
+> dynamically typed
+> cross platform supported(diff OS / various versions)
+
+Java Vs JavaScript:
+> java is static typed while JS is dynamically typed.
+> java is based on OOPS concept while JS is based on prototype.
+>java used for back-end & android apps development,.while JS used to design(interface prototype) and develop(design& adding functionalities to design) websites.
+
+WHY JAVASCRIPT:
+
+>HTML Manipulation- to apply changes in HTML.
+>CSS Manipulation - to aplly changes in/on CSS.
+>Data Validation - set of rules to follow for a data.
+>Dynamic data loading from API - from user or developer,etc.
+>Async functionalities- Callbacks,Promises,Async and Await.
+>Error Handling - try catch except finally. 
+>Rich Community - 
+eg: stackoverflow :65% developers uses js on daily basis.
+
+History:
+> Brenden Eich proposed JS in 1995 at NetScape.
+> upto 2008 :it is for losers.
+> after may 2009: Node.js framework (npm-Node Package Manager) its in boom till date.
+
+* Generally Python/Java will be in first position in industry. but JS is ever green with second position .
+
+Front-end: Angular,React,Vue.js
+
+Back-end: Node.js,Express.js
+
+Testing: Jasmine and Karma.js
+
+Machine Learning : tensorflow.js
+
+AI : brain.js
+
+* Javascript engine is responsible for running Js code in browser to work with webpages.
+-> V8 is a powerful js engine to perform  execution of code easily (Google Chrome).
+
+EcmaScript: is a set of rules and guidlines to create a scripting language.
+
+* Javascript maintains standards of EcmaScript.
+
+Javascript can be classifiedd as:
+>Core JS (vanilla Js)
+>Advanced JS(ES6 features)
+
+Types of JS:
+>Internal JS - within same web page.
+>External JS - code is outside the page and link tag is used.
+
+
+Program for Internal JS:
+
+<html>
+<head>
+<title>Internal</title>
+</head>
+<body>
+<script>
+document.write("Hello World")
+</script>
+</body>
+</html>
+
+Program for External JS:
+<html><head></head>
+<body>
+<script src="script.js"></script>
+</body>
+</html>
+
+script.js :
+document.write("Good Evening")
+
+        DOM Structure
+             |              
+          WINDOWS
+             |
+          DOCUMENT
+         /        \
+     HEAD         BODY
+      |            |
+<style>/<script>  <p><img>.... 
+-------------------------------------------------------------------End of session 1-------------------------------------------------------------------------
+
+Output Statements in JS:
+-> classified into 4 types
+   
+1. document.write => we can print html elements directly on /in a document (active webpage).
+
+eg: program
+
+<html>
+<head><title>Internal</title></head>
+<body>
+<script>
+document.write("Hello World")
+</script>
+</body>
+</html>
+
+2.Inner HTML => to pass html data to already existing html element.
+
+eg: program
+
+<html><head>...</head>
+<body><h1 id="my"></h1>
+<script>
+document.getElementById("my").innerHTML="Hello World"
+</script>
+</body></html>
+
+Eg: program to get with existing html elements
+
+<html><head>...</head>
+<body><h1 id="my">HI</h1>
+<script>
+document.getElementById("my").innerHTML+=",Hello World"
+</script>
+</body></html>
+
+3.console.log => used to print content in console of a browser.
+
+eg:
+
+<html><head>...</head>
+<body><h1 id="my">HI</h1>
+<script>
+document.getElementById("my").innerHTML+=",Hello World"
+console.log("cool")
+</script>
+</body></html>
+
+4.alert => to print content in a dialog box.
+
+eg:
+
+<html><head>...</head>
+<body><h1 id="my">HI</h1>
+<script>
+alert("good")
+document.getElementById("my").innerHTML+=",Hello World"
+console.log("cool")
+</script>
+</body></html>
+
+
+
+
+
+VARIABLES: is a container that stores a value and retrives while execution of program.
+ 
+.to create variable names we use Identifiers.
+
+Identifiers: are user defined keywords to create a variable,class,function,or a method,...
+
+1.it may contain alpha-numaric keys.[a-z,0-9].
+2.cannot start with a digit.
+3.it takes special characters like '_','$'.
+4.names are case sensitive(camelCase)
+ eg:firstname =>firstName(cc)
+    pallapuprasadsri=>pallapuPrasadSri(cc)
+
+variables are classified as
+ 1.LOCAL: variables declared /defined within a block of code.
+>it takes let keyword.
+     eg: let a=10;
+
+ 2.GLOBAL:variables declared/defined outside of block.
+>it takes var keyword.
+     eg: var a=10;
+
+program on local variables:
+
+<html><head><title>Variables</title></head>
+<body>
+<script>
+if(true){
+let firstName="rakesh"
+document.write(firstName);
+}
+</script></body>
+</html>
+
+program on Global variables:
+
+<html><head><title>Variables</title></head>
+<body>
+<script>
+if(true){
+var firstName="rakesh"
+document.write(firstName); //within the block execution.
+}
+document.write(firstName); //out of block exe.
+</script></body>
+</html>
+
+program on GlOBAL without variable declaration:
+
+<html><head><title>Variables</title></head>
+<body>
+<script>
+if(true){
+firstName="rakesh"
+document.write(firstName); //within the block execution.
+}
+document.write(firstName); //out of block exe.
+</script></body>
+</html>
+
+SCOPE OF LOCAL VARIABLE:-
+
+<html><head></head>
+<body><script>
+var naName="JAI"
+if (true){
+let naName="PP"
+document.write("1"+naName)//1PP
+}
+document.write("2"+naName)//2JAI
+naName="RAKI"
+document.write("3"+naName)//3RAKI
+</script>
+
+
+
+Note: priority order is :
+1. keyword(global[var]/local[let])
+2. place of keyword.
+
+****Global and Local variables doesnot take place at same time .
+
+-----------------------------------------------------------end of session 2---------------------------------------------------------------------------------
+
+-------------------------------------------------------------------01/03/2024-------------------------------------------------------------------------------
+Datatypes:
+boolean,byte,short,int,float,long,double,strings,arrays,objects,date...,etc.
+
+* we can use only single declaration.
+either var or let.
+
+Note: if one of the value is integer then in multiplication the other value will also be considered as an integer.
+
+
+Operators:
+ -> based on Operands:
+
+1.Unary Operator: single Operator.
+
+eg: increment(a++), decrement(a--),binary NOT(~a)
+
+2.Binary Operator: two Operators.
+
+eg:arthimetic (a+b)/(a-b) ,relational (a>b)/(a<b)
+
+3.Ternary Operator: more than two Operators.
+
+conditional operators (c=a>b ? a:b)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternary</title>
+</head>
+<body>
+    <script>
+        var n1=13;
+        var n2=15;
+        var n3=17;
+        //var result= n1> n2 ? n1:n2;// if n1>n2 then print n1 else print n2.
+        var j = n1>n2 ? n1:n2; //j=15
+        var result= j>n3?j:n3;// if 15 >17  print 15 else print 17.
+        document.write(result+"is biggest")
+    </script>
+</body>
+</html>
+
+<br><br>
+-> based on type of Operation:
+
+ 1.Arthimetic: +(addition),-(subtraction),*(multiplication),/(division),%(modulo-division[takes remainder]),**(power).
+
+program:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var a =4;
+var b=5;
+//document.write(a+b);//addition
+//document.write(a-b);//subtraction
+//document.write(a*b);//multiplication
+//document.write(a/b);//division
+document.write(a%b);//modulo-division // 5)4(0 -> 4
+    </script>
+</body>
+</html>
+<br><br>
+
+
+ 2.Relational: >(greater than),<(less than),>=(great/equal),<=(less/equal),==(if values are same),===(both value and Datatypes),!=(if values are different),!==(Datatypes are different).
+
+program:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a =5;
+        var b=7;
+        var c="5"
+        //document.write(a>b)// true/false
+        //document.write(a<b)// true/false
+        //document.write(a>=b)// true/false
+        //document.write(a<=b)// true/false
+        //document.write(a==b)// true/false
+        //document.write(a!=b)// true/false
+        //document.write(a===c)// true/false
+        document.write(a!==c)// true/false
+    </script>
+</body>
+</html>
+<br><br>
+
+
+ 3.Logical: &&(AND),||(OR),!(NOT).
+
+ program:
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a =5;
+        var b =2;
+        var c =6;
+        //document.write(a>b&&a>c);// if both are true then true,else false.
+        //document.write(a>b||a>c);//if atleast one is true then true ,else false.
+        document.write(!-1);// zero,any element.// if value is zero or an empty string then true,else false.
+    </script>
+</body>
+</html>
+<br><br>
+ 
+ 4.Assignment:+=,-=,=,*=,...etc.
+
+program:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a = 3;
+        //document.write(a)//var = value.
+        //document.write(a+=5)//a=a+5.
+        //document.write(a-=4)//a=a-4.
+        //document.write(a*=7)//a=a*7.
+        //document.write(a/=4)//a=a/4.
+        document.write(a**=5)//a=a**5.
+    </script>
+</body>
+</html>
+<br><br>
+
+ 5.Bitwise: &,|,~,^,<<,>>.
+
+firstly will check by converting the number into its binary then operations are performed and are reverted back as numbers.
+ num   8 4 2 1
+ 0     0 0 0 0
+ 1     0 0 0 1
+ 2     0 0 1 0
+ 3     0 0 1 1
+ 4     0 1 0 0
+ 5     0 1 0 1
+ 6     0 1 1 0
+ .    ........
+ .    ........
+ .    ........
+ 10     1 0 1 0
+ 16   16 8 4 2 1
+ 25    1 1 0 0 1 
+ 32  1 0 0 0 0 0
+program:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 5;//0101
+        var b = 6;//0110
+        //document.write(a&b);// if both the bits are 1 then 1 else 0.// 0100.
+        //document.write(a|b);//if both  bits are 0 then 0 else 1.//0111.
+        //document.write(~a);//if a =+ve num then (~a) =-(num+1) , if a=-ve num then (~a) =(num-1).
+        //document.write(a^b);//if both are same 0 else 1.//0011.
+        //document.write(a<<1);//multiplication num*2^n(a<<n).
+        document.write(a>>2);//division  num/2^n(a>>n).
+    </script>
+</body>
+</html>
+<br><br>
+
+ 6.increment/decrement: ++,--.
+ >pre-increment/pre-decrement : action before execution.
+
+ program:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a= 5;
+        //document.write(++a);//6 pre-increment
+        document.write(--a);//4 pre-decrement
+    </script>
+</body>
+</html>
+
+
+ >post-increment/post-decrement: action after execution.
+ 
+ program:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+        var a= 9;
+        document.write(a++);//9
+        document.write(a--);//10
+        document.write(a);//9
+    </script>
+</body>
+</html>
+<br><br>
+
+ 7.conditional: [c=a>b? a:b]
+
+ program:
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=3;
+        var b=8;
+        var c=5;
+        var biggest= a>b&&a>c?a:(b>c?b:c);
+        document.write(`${biggest}is biggest`);//8
+    </script>
+</body>
+</html>
+
+
+program to find biggest among 4 values:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+        var a=12;
+        var b=25;
+        var c=39;
+        var d=4;
+        var big=a>b&&a>c&&a>d?a:(b>c&&b>d?b:(c>d? c:d));
+        document.write(`${big}is big`);//39
+    </script>
+</body>
+</html>
+
+
+SWAPPING OF TWO NUMBERS PROGRAM using a temporary variable:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>var a=5;
+    var b=3;
+    c =a;
+    a=b;
+    b=c;
+    document.write(a,b);
+   </script>
+</body>
+</html>
+
+SWAPPING OF TWO NUMBERS PROGRAM without using a temporary variable:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    a="jayanth"
+    b="prasad"
+    document.write([a,b]=[b,a]);
+   </script>
+</body>
+</html>
+-------------------------------------------------------------------------End of session -------------------------------------------------------------------
+-------------------------------------------------------------------------------04/03/2024------------------------------------------------------------------
+                                          Control Statements
+
+Control Statements: are used to control the execution flow of a program.
+
+>control statements are of 3 types:
+ 1.Conditional statements: if , else , nested if else , else if ladder , switch .
+
+=>Conditional statement is used to execute a block of code based on a condition.
+
+   A. IF Statement:IF method has a block of code that is executed when the condition is true.   
+
+*** prompt() is a dialog box used for taking input dynamically from user.
+
+Program for if condition: TO find whether the given number is positive:-
+
+
+<html>
+<head>
+</head>
+<body>
+<script>
+var i=prompt("Enter a number");//prompt is used for taking input dynamically.
+if(i>=0){
+document.write(`${i}is positive`);
+}
+</script>
+</body>
+</html> 
+
+B. IF ELSE Statement: if the condition is true then if block of code is executed otherwise else block of code is executed.
+
+
+
+Program for if else condition: TO find whether the given number is even or odd :-
+
+<html>
+<head></head>
+<body>
+<script>
+var i= prompt("Enter a number");
+if(i%2==0){
+document.write(`${i}is even`);
+}
+else{
+document.write(`${i}is odd`);
+}
+</script>
+</body>
+</html>
+
+
+
+
+Program tO find greatest of  the given numbers:-
+
+<html>
+<head>
+</head>
+<body>
+<script>
+var a=5,b=3;
+if(a>b){
+document.write(a+"is biggest");
+}
+else{
+document.write(b+"is biggest");
+}
+</script>
+</body>
+</html>
+
+
+
+C.Nested If else : if we use if-else block within a if-block  or in a else-block to check multiple conditions.
+
+
+Syntax:
+if(cond 1){
+  if(cond 2){
+}
+else{
+}
+}
+else{
+if(cond 3){
+
+}
+else{
+}
+}
+
+
+
+Program to find greatest of 3 numbers: 
+
+<html>
+<head></head>
+<body>
+<script>
+var a=7;
+var b=5;
+var c=8;
+if(a>b){
+ if(a>c){
+ document.write(a+"is greatest");
+}
+else{
+document.write(c+"is greatest");
+}
+}
+else{
+if(b>c){
+document.write(b+"is greatest");
+}
+else{
+document.write(c+"is greatest");
+}
+}
+</script>
+</body>
+</html>
+
+
+D. Else -if ladder:  we can have different blocks of code for multiple values of a conditional variable.
+
+Note: Else if is always written between an if - else blocks.
+
+Syntax:
+       if(cond 1){
+	// block of code
+       }
+       else if(cond 2){
+	// block of code 
+	}
+	else if(cond 3){
+	// block of code 
+	}
+	else if(cond 4){
+	// block of code 
+	}
+	else{
+	// block of code 
+	}	
+             
+
+Program on Performance of students and marks:
+
+
+<html>
+<head></head>
+<body>
+<script>
+var marks=prompt("Enter the marks");
+if(marks>90&&marks<=100){
+document.write("outstanding")
+}
+else if(marks>80&&marks<=90){
+document.write("A grade")
+}
+else if(marks>70&&marks<=80){
+document.write("B grade")
+}
+else if(marks>60&&marks<=70){
+document.write("C grade")
+}
+else if(marks>0&&marks<=60){
+document.write("Fail")
+}
+else{
+
+document.write("Invalid")
+}
+</script>
+</body>
+</html>   
+
+
+E. Switch : when we have different blocks of code for multiple values of a condition. switch is shortand of else-if ladder.
+
+-> we can take both integers and string for cases in a switch.
+
+Syntax:
+<script>
+var day=prompt("enter b/w 0-3");
+switch(day){
+    
+case 0:document.write("Good morning");
+break;
+case 1:document.write("G.Afternoon");
+break;
+case 2:document.write("G.Evening");
+break;
+default:document.write("G.Night");
+}
+</script>
+
+
+2. Looping :
+ a.Entry controlled: For , While.
+ b.Exit Controlled : Do while.
+
+For loop: is a entry controlled loop to execute a block of code till the condition is true.
+
+ -> for loop is mainly used when the number of iterations are known/fixed.
+
+ ->for loop undergoes 4 step for completion of an iteration:
+    1.Initialisation
+    2. condition check
+    3.Block of code
+    4.Increment/Decrement
+
+Syntax:
+     
+      for(initialisation;condition;increment/decrement){
+       // B.O.C (or) Body
+      }
+Note: we need min.value of initial,max.value,increment/decrement.
+
+
+Program to display numbers 1 to 10 :
+
+<html><head></head>
+<body><script>
+for(let i =1;i<=10;i++)
+{
+document.write(i+"") //document.write(i+"<br>")
+}
+</script>
+</body>
+</html>
+
+
+Program to display even numbers between 1 - 100, divisible by 3 with "Fizz" ,divisible by 5 with "Buzz", divisible by both with "Fizz-Buzz" :
+
+
+for(let i=1;i<=100,i++){
+if(i%2=0){
+ if(i%3=0&&i%5=0){
+document.write("Fizz-Buzz")
+}
+ else if(i%5=0){
+ document.write("Buzz")
+}
+else if(i%3=0){
+  document.write("Fizz")
+ }
+else{
+document.write(i)
+}
+}
+}
+
+
+program to print the pattern 1 11 21 31 41.....121 :- //0*10+1 1*10+1.......
+
+-->L.O.C
+
+for(i=0;i<=12;i++){
+document.write(i*10+1)
+}
+
+
+Program to print sum of leap years including and in between 1947 -2024 :
+
+-->L.O.C
+
+var sum=0;
+for(i=1947;i<=2024;i++){
+if(i%4==0&&i%100!=0||i%400==0){
+  sum+=i;
+}
+}
+document.write(sum)
+
+
+Program to print count of leap years between 1847 - 2024 :
+
+--> L.O.C
+
+        count=0;
+        for(let i=1847;i<=2024;i++){
+            if(i%4==0&&i%100!=0||i%400==0){
+                document.write(i+"<br>")
+                count+=1
+            }
+        }document.write("count="+count)
+
+
+
+Program to check if a number is Prime or not:
+
+-->L.O.C
+
+var num =prompt("Enter a number");
+var count=0;
+for(let i=1;i<=num;i++){
+if(num%i==0){
+ count+=1;
+}
+}
+if(count==2)
+{
+document.write(num+"is a prime");
+}
+else
+{
+document.write(num+"is not a prime");
+}
+
+-----------------------------------------------------------------End of session ----------------------------------------------------------------------------
+
+---------------------------------------------------------------------05/03/2024-----------------------------------------------------------------------------
+
+Write a Javascript to print Body Mass Index of a user:
+
+-->weight,height to be taken from user.
+
+-->L.O.C
+
+ var H=prompt("Enter height");
+ var W=prompt("Enter weight");
+ var B.M.I=W/H**2
+ document.write(B.M.I);
+ if(B.M.I>0&&B.M.I<45){
+ if(B.M.I<18.5)
+{
+document.write("Under-Weighted"+"tip:Gain some weight");
+}
+else if(B.M.I>=18.5&&B.M.I<25)
+{
+document.write("You are Normal"+"tip:Keep it up");
+}
+else if(B.M.I>=25&&B.M.I<30)
+{
+document.write("Over-Weighted"+"tip:Do some walk");
+}
+else{
+document.write("Obesity"+"tip:Do workout and follow diet");
+}
+}
+else{
+document.write("Invalid Parameters");
+}
+
+
+Nested for loop: a for loop within a for  loop is known to be nested for loop.
+
+->Inner loop, Outer loop.
+
+->After completion of iterations of inner loop , outer loop iteration will take place.
+
+
+Program to print 4*4 star program : ****
+				    ****
+				    ****
+				    **** 
+
+-->L.O.C
+
+for(let i=1;i<=4;i++){
+for(let j=1;j<=4;j++){
+ document.write("*");
+}
+document.write("<br>");
+}
+
+	
+
+Program to print the following pattern: 11 12 13 21 22 23 31 32 33
+
+
+-->L.O.C
+
+for(let i=1;i<=3;i++){
+for(let j=1;j<=3;j++){
+document.write(i+""+j+"<br>")
+}
+}
+
+
+                                  1 2 3 4
+Program to print the pattern      5 6 7 8
+                                  9 10 11 12
+                                  13 14 15 16
+
+-->L.O.C
+
+   for(i=1;i<=16;i++){
+            document.write(i+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+            if(i%4==0){
+                document.write("<br>")
+            }
+        }
+                              1 2 3 4 5
+                              2 4 6 8
+Program to print the pattern  3 6 9
+                              4 8
+                              5
+
+
+-->L.O.C 
+
+let k=1;
+for(let i=5;i>=0;i--){
+for(let j=1;j<=i;j++)
+{
+document.write(j*k+"&nbsp;");
+}
+k++;
+document.write("<br>");
+}
+
+
+Program 1 2 3 4
+        5 6 7 8
+        9 10 11 12
+     	13 14 15 16
+
+-->L.O.C
+ 
+ let count=1;
+        for(let i=1;i<=4;i++){
+            for(let j=1;j<=4;j++){
+                document.write(count+"&nbsp;&nbsp;&nbsp;&nbsp;");
+                count++;
+            }
+            document.write("<br>")
+        }
+
+                      *
+Program for pattern : * *
+                      * * *
+                      * * * *
+ -->L.O.C	      * * * * * 
+
+
+for(let i=1;i<=5;i++)
+{
+for(let j=1;j<=i;j++){
+document.write("*"+"&nbsp;");
+}
+document.write("<br>");
+}
+
+
+Program to print pattern 
+
+* * * * * 			
+* * * * 
+* * * 
+* * 
+* 
+-->L.O.C
+
+
+ for(let i=5;i>=1;i--)
+{
+for(let j=1;j<=i;j++){
+document.write("*"+"&nbsp;");
+}
+document.write("<br>");
+}
+
+
+
+While loop: is an  entry controlled loop,it is used when number of iterations are unknown.
+
+
+Syntax:
+  
+ initialisation;
+ while(condition)
+ {
+ //block of code
+ increment/decrement 
+}
+
+
+Program to print numbers from 1-100 using for loop and using while loop :
+
+
+for loop:
+
+-->L.O.C
+
+for(let i=1;i<=100;i++){
+document.write(i);
+}
+
+
+while loop:
+
+-->L.O.C
+
+let i=1;
+while(i<=100){
+document.write(i);
+i++
+}
+
+
+Program to print no of digits in a number :
+
+Algorithm:
+
+step-1:Declare number;
+step-2:create variable counter to count no.of iterations.
+step-3:run step 4 until number=0;
+step-4:number=number/10;counter++;
+step-5:if number=0 goto step 6.
+step-6:print counter as no.of digits.
+
+
+-->L.O.C
+    
+     var counter=0;
+     var num=prompt("Enter a number");
+     while(num!=0){
+        num=parseInt(num/10);
+        counter++
+     }
+     document.write("no.of digits"+counter)
+   
+
+Program to print  reverse of a number :
+
+-->L.O.C
+
+var sum="";
+var num=parseInt(prompt("Enter a number"));
+while(num!=0)
+{
+rem=num%10;
+sum+=rem;
+num=parseInt(num/10);
+}
+document.write("Reverse number is"+sum);
+
+
+Program to find if number is palindrome or not :
+
+-->L.O.C
+
+ var num=prompt("Enter a number");
+        var temp=num;
+        var sum="";
+        while(num!=0){
+            rem=num%10;
+            sum+=rem;
+            num=parseInt(num/10);
+        }
+        num=temp;
+        if(num==sum){
+            document.write(sum+"is a palindrome");
+        }
+        else{
+            document.write(sum+"is not a palindrome")
+        }
+
+Program to print palindromes from 100 to 200 :
+
+-->L.O.C
+
+for(let i=100;i<=200;i++){
+temp=i;
+var sum="";
+while(i!=0){
+rem=i%10;
+sum+=rem;
+i=parseInt(i/10);
+}
+i=temp;
+if(i==sum){
+document.write(sum);
+}
+
+---------------------------------------------------------------End of session-------------------------------------------------------------------------------
+
+----------------------------------------------------------------06/03/24------------------------------------------------------------------------------------
+
+
+Program to find factorial of a given number :
+
+Algorithm :-
+
+s-1:declare num,fact=1;
+s-2:i=1;i<=num;i++;
+s-3:fact=fact*i;
+s-4:print fact;
+
+-->L.O.C
+if(num!=0){
+var num=prompt("Enter a number"),fact=1;
+for(i=1;i<=num;i++){
+fact*=i;
+}
+document.write("Factorial of"+num+"is"+fact);
+}
+else{
+document.write("Enter a valid number");
+}
+
+
+Program to check if number is strong or not :
+
+Algorithm :-
+
+s-1:declare num,temp=num,sum=0,rem;
+s-2:run below steps till num becomes zero then go to last step;
+s-3:rem=num%10;
+s-4:let fact=1,calculate factorial for rem;
+s-5:sum+=fact;
+s-6:num=num/10;
+s-7:if sum==temp then print the number is strong else not strong .
+
+-->L.O.C
+
+var num=parseInt(prompt("Enter a number"));
+sum=0,temp=num,rem;
+if(num!=0){
+while(num!=0){
+rem=num%10;
+let fact=1;
+for(i=1;i<=num;i++){
+fact*=i;
+}
+sum+=fact;
+num=parseInt(num/10);
+}
+if(sum==temp){
+document.write(temp+"is a strong number");
+}
+else{
+document.write(temp+"is not a strong number");
+}
+}
+else{
+document.write("unable to calculate for"+temp);
+}
+
+
+
+
+***  FUNCTIONS:-
+
+
+-> Function is a special block of code which is called for certain task.
+
+-> Function has a function definition and function body.
+
+-> Function can be declared by using function keyword in JS Or with parenthesis ().
+
+Syntax:
+
+function functionName()
+{
+// body
+}
+
+functionName() // calling a function
+
+
+eg:-
+
+function Even(){
+if(i%2==0){
+document.write("even")
+}
+}
+
+Even();
+
+
+eg:-
+
+function hello(){
+document.write("HELLO WORLD")
+}
+
+hello();
+
+
+Named function:- To make a variable (or) identifier as function.
+
+eg:-
+
+let greetings=function(){
+document.write("Welcome to JS");
+}
+
+greetings();
+
+
+Functions are classified into 3 types :
+
+1. Function with zero parameters.
+
+2. Function with parameters.
+
+3. Function with parameters and return type.
+
+
+
+Function with zero parameters : -
+
+function hello(){
+document.write("Hi");
+}
+
+hello();
+
+
+Function with parameters :-
+
+let uname=prompt("Enter name");
+let dom=prompt("Enter domain");
+hello(uname,dom);
+
+function hello(username,domain){
+document.write(`${username}is working in${domain}`);
+}
+
+
+Function with parameters and return type :-
+
+let uname=prompt("Enter name");
+let dom=prompt("Enter domain");
+let result=hello(uname,dom);
+
+function hello(username,domain){
+return `${username}working in ${domain}domain`;
+}
+document.write(result);
+
+
+** Hoisting :- we can use variables (or) methods (or) functions in JS before declaring , that which is known as Hoisting.
+
+
+Program to print if a number is Perfect number or not.
+
+Perfect number : - A number is said to be a perfect number when the sum of divisibles of a number excluding that number  itself ,is equal to the original number .
+
+
+--> L.O.C
+
+var n=prompt("Enter a number");
+sum=0;
+for(i=1;i<n;i++){
+if(n%i==0){
+sum+=i
+}
+}
+if(n==sum){
+document.write(n+"is a perfect number");
+}
+else{
+document.write(n+"is not a perfect number");
+} 
+
+
+Javascript program for following pattern        * 
+				    	      * *
+ 					    * * *
+					  * * * *	  
+
+
+let n=4;
+let string="";
+for(let i=1;i<=n;i++){
+for(let j=0;j<n-i;j++){
+string+="&nbsp;";
+}
+for(let k=0;k<i;k++){
+string+="*";
+}
+string+="<br>";
+}
+document.write(string)
+
+----------------------------------------------------------------- End of session ---------------------------------------------------------------------------			
+----------------------------------------------------------------- 11/03/2024 -------------------------------------------------------------------------------
+
+
+Write a Javascript program to print G.C.D of two numbers : -
+
+--> L.O.C 
+
+var a=prompt("Enter a number a=");
+var b=prompt("Enter a number b=");
+while(b!=0){
+temp=b;
+b=a%b;
+a=temp;
+}
+document.write("G.C.D is "+a);
+
+
+Write a Javascript program to print fibanocci series till a number : -
+
+--> L.O.C
+
+var num=parseInt(prompt("Enter a number"));
+var a=0,b=1,c=a+b;
+
+document.write(a+" "+b+" ");
+while(c<=num){
+document.write(c)
+a=b;
+b=c;
+c=a+b;
+}
+
+------------------------------------------------------------------ End of session-1 ------------------------------------------------------------------------
+
+Arrow Functions : Arrow function is a shortest form of functions in Javascript which is introduced in ES6.
+
+->It is represented as ()=> Arrow function.
+
+-->L.O.C 
+
+let hello=(username)=>"Hello"+username+",Welcome to Javascript".
+var res=hello("Jayanth");
+document.write(res)
+
+
+Output is :- Hello Jayanth,Welcome to Javascript.
+
+
+Addition function :- 
+
+using arrow function:
+
+-->L.O.C 
+
+let add=(a,b)=>a+b;
+document.write(add(5,6));
+
+Output is :- 11.
+
+Conventional/ Normal function :- 
+
+-->L.O.C
+
+function add(a,b){
+return(a+b);
+}
+document.write("<br> from simple function add="+add(2,3));
+
+Output is :- from simple function add = 5.
+
+**** type of NaN => number datatype. NaN stands for Not a Number.
+
+
+Arrays in Javascript :-
+
+Array is a data structure in javascript which is used to store,manipulate,transverse the multiple values with single variable.
+
+-> Index based arrays and array index starts from 0;
+
+-> Two different ways to create array in JS.
+   
+    1. Array Literals
+    
+    2. Array Objects
+
+Array Literals :-
+
+eg:-   let arr=[1,5,7,9,12];
+
+-> Arrays allow all the datatypes.
+
+eg:- let arr=[1,5,7,9."GJKG","ME",True,1.5];
+
+
+Array Objects :-
+
+eg:- let arr=new Array();
+     arr[0]=5;
+     arr[1]=7;
+
+=> length of the array is 'n' so maximum index of the array is 'n-1'.
+
+-->L.O.C
+
+let arr=[10,12,30,5,7];
+document.write(arr[2]);
+
+=> to change a value within an array .
+
+-->L.O.C
+
+let arr=[10,2,30,15];
+arr[2]=50;
+document.write(arr[2]);
+
+Output is :- 50
+
+Javascript Program to print all values in an array : -
+
+let arr=[10,12,30,9,7]
+for(let i=0;i<arr.length;i++);
+document.write(arr[i]);
+
+Using for-of :-
+
+let arr=[10,12,30,9,7]
+for(let a of arr)
+document.write(a+"<br>");
+
+
+To print even numbers from an array : -
+
+let arr=[10,20,3,8,9]
+for(let a of arr){
+if(a%2==0){
+document.write(a+"<br>");
+}
+}
+
+
+Write a Javascript program to print biggest number in array : -
+
+-->L.O.C
+
+let arr=[10,11,12,30,5,7,1]
+let big=arr[0];
+for(let a of arr){
+if(a>big)
+big=a;
+}
+document.write(a);
+
+
+Write a Javascript program to print smallest number in array : -
+
+-->L.O.C
+
+let arr=[10,11,12,30,5,7,1]
+let small=arr[0];
+for(let a of arr){
+if(a<small)
+small=a;
+}
+document.write(a);
+
+Addition of two numbers without using arthimetic operator : 
+
+var a=prompt("Enter a number");
+var b=prompt("Enter a number");
+for(i=1;i<=b;i++){
+a++
+}
+document.write("Sum="+a);
+
+Using while loop :-
+
+var a=prompt("Enter a number");
+var b=prompt("Enter a number");
+while(b!=0){
+a++;
+b--;
+}
+document.write("sum="+a);
+
+
+Array methods in Javascript : -
+
+1.pop()=> to remove last element of an array.
+
+2.push()=> to add a element at last of an array.
+
+3.shift()=> to remove first element of an array.
+
+4.Unshift()=> to add first element of an array.
+
+5.splice()=> we can add/remove an element at a position,takes three parameters . splice(position,no.of.elements to remove,to add elements).
+
+6.slice()=> to create an subarray from an existing array,takes 2 values start index and end index.
+
+7.sort()=> to sort elements of an array in a dictionary order.
+
+8.reverse()=> to reverse a number or elements of an existing array.
+
+9.join()=> to convert the array elements into a single string . In other words we say to add all elements of an array to an array.
+
+-> we can use a separator to separate array elements.
+
+10.concat()=> to add two (or) more arrays to form a new array ,we use concat().
+
+
+
+Program using pop,push,shift,unshift : -
+
+-->L.O.C 
+
+let singers=["Sidsriram","Armaanmalik","SPB","Jainen","Jubinnutyal"]
+singers.pop();//Jubinnutyal is deleted.
+singers.push("Kailashkher");//Kailashkher is added at last.
+singers.shift();//Sidsriram is deleted.
+singers.Unshift("Chitra");//Chitra is added at first.
+document.write(singers);
+
+Output :- Chitra Armaanmalik SPB Jainen Kailashkher
+
+
+** L.O.C for splice :-
+
+let marvel=["Ironman","Cap.America","Thor","Hulk"]
+marvel.splice(0,2,"Hi");
+document.write(marvel);
+
+Output :- Hi Thor Hulk
+
+** L.O.C for slice :-
+
+let marvel=["Ironman","Cap.America","Thor","Hulk"]
+let a=marvel.slice(0,3);
+document.write(a);
+
+Output :- Hulk
+
+** L.O.C for sort :-
+
+let string =["j","k","i","g"]
+document.write(string.sort());//for ascending.
+
+Output :- gijk
+
+** L.O.C for sort :-
+
+let string =["j","k","i","g"]
+document.write(string.sort().reverse());//for descending.
+
+Output :- kjig
+
+** L.O.C for sort of integers :-
+
+let nums=[10,5,7,12,1,3,11];
+document.write(numbers.sort((a,b)=>a-b));//for ascending order.
+
+Output :- 1 3 5 7 10 11 12
+
+let nums=[10,5,7,12,1,3,11];
+document.write(numbers.sort((a,b)=>b-a));//for descending order.
+
+Output :- 12 11 10 7 5 3 1
+
+
+** L.O.C for join :-
+
+let string=["a","b","f","r","c"]
+document.write(string.join("-"));
+
+Output :- a-b-f-r-c
+
+
+** L.O.C for concat :-
+
+let malesingers=["SPB","Sidsriram","Armaanmalik","Jainen"]
+let femalesingers=["Chitra","Janakamma","sailaja"]
+let singers=malesingers.concat(femalesingers);
+document.write(singers);
+
+
+Output :-  SPB Sidsriram Armaanmalik Jainen Chitra Janakamma Sailaja
+
+
+ 
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------- End of session-2 ----------------------------------------------------------------------
+

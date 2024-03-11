@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=3;
+        var b=8;
+        var c=5;
+        var biggest= a>b&&a>c?a:(b>c?b:c);
+        document.write(`${biggest}is biggest`);//8
+    </script>
+    <script>
+        var a=12;
+        var b=25;
+        var c=39;
+        var d=4;
+        var big=a>b&&a>c&&a>d?a:(b>c&&b>d?b:(c>d? c:d));
+        document.write(`${big}is big`);//39
+    </script>
+</body>
+</html>

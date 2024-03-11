@@ -1,0 +1,52 @@
+   LOCAL:-
+<html><head><title>Variables</title></head>
+<body>
+<script>
+if(true){
+let firstName="rakesh"
+document.write(firstName);
+}
+</script></body>
+</html>
+
+
+<hr>
+     GlOBAL:-
+<html><head><title>Variables</title></head>
+<body>
+<script>
+if(true){
+var firstName="rakesh"
+document.write(firstName); //within the block execution.
+}
+document.write(firstName); //out of block exe.
+</script></body>
+</html>
+
+  <hr>   GlOBAL without variable declaration:-
+<html><head><title>Variables</title></head>
+<body>
+<script>
+if(true){
+firstName="rakesh"
+document.write(firstName); //within the block execution.
+}
+document.write(firstName); //out of block exe.
+</script></body>
+</html>
+
+<hr>
+SCOPE OF LOCAL VARIABLE:-
+
+<html><head></head>
+<body><script>
+var naName="JAI"
+if (true){
+let naName="PP"
+document.write("1"+naName)//1PP
+}
+document.write("2"+naName)//2JAI
+naName="RAKI"
+document.write("3"+naName)//3RAKI
+</script>
+</body></html>
