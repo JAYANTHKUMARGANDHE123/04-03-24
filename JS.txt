@@ -1693,8 +1693,10 @@ arr.forEach(even)
 
 function even(el){
 count=0;
-if(el%2==0)
+if(el%2==0){
 count++;
+}
+return count;
 }
 document.write(count)
 
@@ -1945,4 +1947,602 @@ location:"KMR"
 }
 
 
-Objects : 
+Object :- Object is a data structure which is used to store collection of key-value pairs. 
+
+--> Keys are unique.
+--> JS is a template based language because we dont need a class to create an object.
+
+--> Object can be created in 3 different ways in JS :-
+
+=>Object Literal 
+=>new Object reference 
+=>functional constructor
+
+
+Note : for-of => arrays. for-in => objects. 
+
+Object Literal :-
+
+--> L.O.C 
+
+var mobile={
+companyName:"Oneplus",
+modelName:"9RT",
+price:42000,
+proessor:"SP888"
+}
+
+for(let m in mobile)
+document.write(m+":"+mobile[m]+"<br>");
+//document.write("companyName:"+mobile.companyName);
+
+
+New Object reference :-
+
+-->L.O.C  
+
+var mobile=new Object();
+mobile.companyName="Oneplus",
+mobile.modelName="9RT",
+mobile.price=42000,
+mobile.processor="SP888"
+
+for(let m in mobile)
+document.write(m+":"+mobile[m]+"<br>");
+//document.write("companyName:"+mobile.companyName);
+
+
+-> JS object can have method .
+-> this is  a keyword refers to local value (this)
+
+--> L.O.C
+
+var mobile={
+companyName:"Oneplus",
+modelName:"9RT",
+price:42000,
+process:"SP888"
+mobileFullName:function(){
+return this.companyName+this.modelName;
+}
+}
+document.write(mobile.mobileFullName());
+
+
+Functional Constructor :-
+
+function mobile(companyName,modelName,price,processor){
+this.companyName=companyName;
+this.modelName=modelName;
+this.price=price;
+this.processor=processor;
+}
+
+let m1=new mobile("Oneplus","9RT",42000,"SP888");
+let m2=new mobile("Samsung","S24Ultra",120000,"SP8 Gen2");
+document.write(m1.companyName+m2.companyName)
+
+Note : document.write([1,2]==[1,2])// false both arrays are in different memory locations.
+
+Syntax : 
+
+function mobile(companyName,modelName,price,processor){
+this.companyName=companyName;
+this.modelName=modelName;
+this.price=price;
+this.processor=processor;
+}
+let m1=new mobile("Oneplus","9RT",42000,"SP888");
+let m2=new mobile("Samsung","S24Ultra",120000,"SP8 Gen2");
+let m1=new mobile("Google","Pixel8",72000,"Tensor");
+let mobileArray=[m1,m2,m3]
+
+for(let a in mobileArray){
+document.write("<br>")
+for(let i in a){
+document.write(i+":"+a[i]+"<br>")
+}
+}
+
+
+
+Program to print mobiles where price is greater than 70000 :-
+
+
+function mobile(companyName,modelName,price,processor){
+this.companyName=companyName;
+this.modelName=modelName;
+this.price=price;
+this.processor=processor;
+}
+let m1=new mobile("Oneplus","9RT",42000,"SP888");
+let m2=new mobile("Samsung","S24Ultra",120000,"SP8 Gen2");
+let m1=new mobile("Google","Pixel8",72000,"Tensor");
+let mobileArray=[m1,m2,m3]
+
+for(let a in mobileArray){
+document.write("<br>")
+if(a.price>70000){
+for(let i in a){
+document.write(i+":"+a[i]+"<br>")
+}
+}
+}
+
+Constraints:
+            student function=> studentName,studentClass,studentLocation,studentMarks in percentage.
+
+function student(studentName,studentClass,studentLocation,studentMarks){
+this.studentName=studentName;
+this.studentClass=studentClass;
+this.studentLocation=studentLocation;
+this.studentMarks=studentMarks;
+}
+
+let s1=new student("Prasad","MCA","HYD",95);
+let s2=new student("Rakesh","B.Tech","HYD",90);
+let s3=new student("Vali","MCA","HYD",88);
+let s4=new student("Rakesh","MCA","HYD",90);
+let s5=new student("Pradeep","MS","US",95);
+let s6=new student("Anand","MSC","HYD",80);
+let studentArray=[s1,s2,s3,s4,s5,s6]
+
+for(let a of studentArray){
+document.write("<br>")
+if(a.studentClass="MCA"&&a.studentLocation="HYD"&&a.studentMArks>=80){
+for(let i in a){
+document.write(i+":"+a[i]+"<br>")
+}
+}
+}
+document.write("Good Night");
+
+--------------------------------------------------------------- End of session -----------------------------------------------------------------------------
+
+------------------------------------------------------------------ 14/03/24 --------------------------------------------------------------------------------
+                          
+                                                              STRINGS
+
+Strings : - string is a group of characters or a character array in JS.
+
+
+Javascript string methods :-
+
+1. toLowerCase => to convert all chars to Lowercase.
+
+2. toUpperCase => to convert all chars to Uppercase.
+
+3. slice(start,end) => to extract substring using starting index and ending index. // slice can take negative values (negative indexing).
+
+4. substring(start,end) => to extract substring using starting and ending index.
+
+5. substr(start,length) => to extract substring using starting index and till length.
+
+6. padStart => to pads any character at start of a string.
+
+7. padEnd => to pads any character at the end of a string.
+
+8. concat => to merge two strings.
+
+9. repeat => to repeat string.
+
+10. replace => to replace string's character or group of characters.
+
+11. indexOf => to find index of any character (first Occurance).
+
+12. lastIndexOf => to find index of any character (last Occurance).
+
+13. split => to split a string into arrays.
+
+14. startsWith => to check if a string starts with a specific character or characters.
+
+15. endsWith => to check if a string ends with a specific character or characters.
+
+16. length => to print length of a string.
+
+
+Program for string methods :- 
+
+-->L.O.C 
+
+var string="Welcome to Javascript"
+var str=string.toUpperCase();
+var str1=string.toLowerCase();
+var str2=string.slice(0,6);
+var str3=string.slice(-13);// supports negative indexing.
+var str4=string.substring(0,6);
+var str5=string.sustring(-13);//Welcome to Javascript (-ve index isn't supported)
+
+document.write(str);
+
+substr : -
+
+-->L.O.C 
+
+var string="Welcome to Javascript"
+var str=string.substr(2,12); // lcome to Jav
+
+document.write(str);
+
+padStart & padEnd : - 
+
+-->L.O.C 
+
+var str="5";
+var str1=str.padStart(4,"*");
+var str2=str.padEnds(4,"*");
+
+document.write(str1+"<br>"+str2);
+
+Output :- ****5
+          5****
+
+L.O.C for repeat :
+
+var str="Hello ";
+document.write(str.repeat(2)); // Hello Hello
+
+
+L.O.C for replace and replaceAll :
+
+var str="Hello World World";
+document.write(str.replace("World","Javascript")); // Hello Javascript World
+document.write(str.replaceAll("World","Javascript")); // Hello Javascript Javascript
+
+
+L.O.C for concat : 
+
+var str="Hello World";
+var res=str.concat("Welcome to Javascript");
+document.write(res);
+
+Output :-  Hello World Welcome to Javascript.
+
+L.O.C of indexOf and lastIndexOf :
+
+var str="Hello World Welcome to Javascript World";
+var res=str.indexOf("World"); // 6
+var res1=str.lastIndexOf("World"); // 35
+
+L.O.C for split,startsWith,endsWith : 
+
+var str="Hello World";
+var split=str.split(" ");// Hello World
+var str1=str.startsWith("Hello");// true
+var str2=str.endsWith("Hello");// false
+
+document.write(split+"<br>"+str1+"<br>"+str3)
+
+L.O.C for length : 
+
+var str="Hello World";
+document.write(str.length()); // 11 
+
+
+Javascript program to check if a given string is a palindrome :- 
+
+let str=prompt("Enter a text");
+let arr=str.split("");
+let b=arr.reverse();
+let c=b.join("");
+
+if(str==c){
+document.write(str+"is a palindrome");
+}
+else{
+document.write(str+"is not a palindrome");
+}
+
+
+-->L.O.C
+
+var str=prompt("Enter a text");
+if(str==str.split("").reverse().join("")){
+document.write(str+"is a palindrome")
+} 
+else{
+document.write(str+"is not a palindrome");
+}
+
+Program to validate  login by taking inputs from user : -
+
+let username=prompt("Enter name");
+let password=prompt("Enter password");
+let res=username.substring(0,3);
+default password=res.concat("123")
+
+if(password==default password){
+document.write("Login successful");
+}
+else{
+document.write("Invalid login");
+}
+
+
+map(Map) :- is a data structure which stores values as key-value pairs , here keys can be of any type.
+
+methods in map : 
+
+-> set => to add keys and values to a value.
+
+-> get => to access the value using its key in a map.
+
+-> has => to check if a key is within the map.
+
+-> delete => to delete the values based on key in a map.
+
+
+L.O.C for Map : -
+
+var m1=new Map();
+m1.set(1,"One");// to store key as 1 & value as One.
+m1.set(2,"Two");// to store 2,Two as key and value.
+m1.set(2,"Three");// to replace the value "Two" with "Three".
+m1.set("hi","Hello World");// to store key as "hi" and value as "Hello World".
+
+document.write(m1.get("hi"));// Hello World.
+document.write(m1.has("One"))// false because key as "One" is not a available.
+
+To access all Keys and Values :-
+
+m1.forEach((el,ind)=>{
+document.write(`<br>${ind}->${el}`);
+}) 
+
+
+Set : set is a collection which stores collection of unique values.
+
+-> add() => to add values to a set.
+
+var s1=new set();
+s1.add(1);
+s1.add(5);
+s1.add(2);
+s1.add(5);
+
+for(let a in s1){
+document.write(a+" ");// 1 5 2.
+}
+
+-> has() => takes index and gives the values as true or false.
+
+Program to remove duplicates in an array :-
+
+var arr=[5,7,12,30,60,5,12,7];
+var s1=new.set(arr); // creating set from array.
+var newarr=[...s1];// creating array from set.
+document.write(newarr); // (i,e. using SPREAD operator)
+
+for(let a of s1)
+document.write(a+"<br>");
+
+-------------------------------------------------------------------- End of session -1 ---------------------------------------------------------------------
+
+-----------------------------------------------------------------  Session -2 ------------------------------------------------------------------------------
+
+
+DOM Methods :-
+
+Document Object Model : DOM method is used to read / manipulate / access HTML element from JS.
+
+
+                                                         DOM STRUCTURE  
+
+
+                                                              window
+                                                                |
+                                                              document
+                                                             /         \
+                                                          head          body
+
+                                                       /   |     \       /  |   \
+                                                   style  script Meta   p   img  h1 ......
+
+
+Window : window is nothing but new tab in the browser which has document,couple of buttons like minimize,maximize,title,close,etc.,.
+
+Document : document is the active webpage in  browser.
+
+-> window is first element in the DOM then document and it has two parts.i,e. head and body of HTML.
+
+-> we have 4 different methods in DOM :
+
+ 1. getElementById
+ 2. getElementsByClassName
+ 3. getElementsByTagName
+ 4. querySelector
+
+
+getElementById :- to access an element in HTML using its Id.
+
+-->L.O.C
+
+<h1 id="hello">HelloWorld</h1>
+<button onclick="changeColor()">Change Color</button>
+<script>
+function changeColor(){
+document.getElementById("hello").style.color="red";
+}
+</script>
+
+
+getElementsByClassName : - to access  multiple HTML elements using a same class name.
+
+-->L.O.C
+
+<h1 id="hello" class="content > Hello World </h1>
+<p class="content"> world is full of emotions and ego's </p>
+
+<h2 class="content"> TechJobs </h2>
+
+<h3 class="content"> @ Hyd </h3>
+
+<button onclick="changeColor()"> Change Color </button>
+
+<script>
+
+function ChangeColor() { Var tags = document.getElementsByClassName("content"),
+
+tags[0].style.color = "red"
+
+tags[1].style.color="blue"
+
+tags [2]. Style, Color="green"
+
+tags [3].style.color = "Yellow"
+
+}
+
+</script>
+
+
+getElementsByTagName : - to access multiple values using Tag name.
+
+-->L.O.C
+
+<h1 id="hello" class="content > Hello World </h1>
+<p class="content"> world is full of emotions and ego's </p>
+
+<h2 class="content"> TechJobs </h2>
+
+<h3 class="content"> @ Hyd </h3>
+
+<button onclick="changeColor()"> Change Color </button>
+
+<h1>hello</h1>
+
+<script>
+
+function ChangeColor() { Var tags = document.getElementsByTagName("h1"),
+
+tags[0].style.color = "red"
+
+tags[1].style.color="blue"
+
+tags [2]. Style, Color="green"
+
+tags [3].style.color = "Yellow"
+
+}
+
+</script>
+
+
+querySelector :- is use for applying n no.of selectors to access a element by using all possible selectors.
+
+-->L.O.C
+
+<h1 id="hello" class="content > Hello World </h1>
+<p class="content"> world is full of emotions and ego's </p>
+
+<h2 class="content"> TechJobs </h2>
+
+<h3 class="content"> @ Hyd </h3>
+
+<button onclick="changeColor()"> Change Color </button>
+
+<script>
+
+function ChangeColor() {
+document.querySelector("h1.content#hello").style.color = "red";
+
+}
+
+</script>
+ 
+
+
+Program to calculate maturity amount (F.D calculator) : -
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body > 
+    <h2>Fixed Deposit Calculator</h2>
+    <div> 
+    
+            <div style="height: 250px;width:250px;background-color:aquamarine;position:relative; left:45%;padding-top:20px;">
+            <input type="text" placeholder="username" style="margin:10px;" id="username">
+            <input type="int"  placeholder="age" style="margin: 10px;" id="age">
+            <input type="int" placeholder="amount" style="margin: 10px;" id="amount">
+            <input type="int" placeholder="tenure" style="margin: 10px;" id="tenure">
+            <button onclick="maturityamount()" style="position:relative ;left:60px;">Calculate</button>
+            <h5 id="res"></h5>
+           </div>
+        
+    </div>
+    <script>
+        function maturityamount(){
+            var uname,uage,uamount,utenure;
+            uname=document.getElementById("username").value;
+            uage=document.getElementById("age").value;
+            uamount=document.getElementById("amount").value;
+            utenure=document.getElementById("tenure").value;
+            if(age<60){
+             let ri=6;
+             total=(uamount+parseInt(uamount*ri*utenure)/100);
+             Amount= total-parseInt((total*0.5)/100)
+             document.getElementById("res").innerHTML=uname+"maturityamount="+Amount;
+            }
+            else{
+                ri=8;
+                Amount= (uamount+parseInt(uamount*ri*utenure)/100);
+                document.getElementById("res").innerHTML=uname+"maturityamount="+Amount;
+            }
+        }
+
+    </script>
+</body>
+</html>
+
+
+For facebook page adding JS :-
+
+
+-->L.O.C 
+
+function checkLogin(){
+var uname,upwd;
+
+uname=document.getElementById("username").value;
+pwd=document.grtElementById("password").value;
+
+var ourpwd=uname.slice(0,3)+"123";
+if(pwd==ourpwd){
+alert("login Successful");
+}
+else{
+alert("Invalid username or password")
+}
+
+To add some more functionality look :-
+
+-> In div element add a tag with id="result". eg: <h5 id="result"></h5>
+
+
+function checkLogin(){
+var uname,upwd;
+
+uname=document.getElementById("username").value;
+pwd=document.grtElementById("password").value;
+
+var ourpwd=uname.slice(0,3)+"123";
+if(pwd==ourpwd){
+document.getElementById("result").innerHTML=uname+"Login Successful";
+document.getElementById("result").style.color="green";
+}
+else{
+document.getElementById("result").innerHTML="Login failed";
+document.getElementById("result").style.color="red";
+
+** form tag always refreshes the webpage everytime .As a result result may not be displayed.
+
+ 
+
+}
