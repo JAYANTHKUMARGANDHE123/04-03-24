@@ -1740,10 +1740,10 @@ let arr=[5,7,12,30,25,43];
 let newarr=arr.map((i)=>i*2)
 document.write(newarr);
 
-Program to print even numbers in an array to new array.
+Program to print even numbers in an array to new array :-
 
 let arr=[5,7,12,30,25,43];
-let newarr=arr.map((i)=>i if(i%2==0))
+let newarr=arr.map((i)=>{if(i%2==0){return i}})
 document.write(newarr);
 
 
@@ -1766,10 +1766,10 @@ let arr=[5,7,12,30,25,43];
 let res=arr.findIndex((i)=>i>12);
 document.write(res);
 
-Output :- 4 
+Output :- 3 
 
 
-To print index and value of anumber  greater than a certain number :-
+To print index and value of a number  greater than a certain number :-
 
 -->L.O.C
 
@@ -2521,7 +2521,7 @@ else{
 alert("Invalid username or password")
 }
 
-To add some more functionality look :-
+To add some more functionality look to facebook :-
 
 -> In div element add a tag with id="result". eg: <h5 id="result"></h5>
 
@@ -2540,9 +2540,185 @@ document.getElementById("result").style.color="green";
 else{
 document.getElementById("result").innerHTML="Login failed";
 document.getElementById("result").style.color="red";
+}
 
 ** form tag always refreshes the webpage everytime .As a result result may not be displayed.
 
- 
+--------------------------------------------------------------- End of session ----------------------------------------------------------------------------- 
 
+------------------------------------------------------------------  15/03/24 -------------------------------------------------------------------------------
+
+
+** Akshay saini - youtube channel -> Namasthe Javascript .
+
+
+                                                     -:: EVENTS IN JAVASCRIPT ::-
+
+
+Events :- event is an action performed by the user / system on a document (current page) to respond to those actions we use events in JS.
+
+onload :- it executes when the webpage is loaded in the browser window.
+
+* onload is always written within the body tag opening.
+
+-->L.O.C 
+
+<html><head></head>
+<body  onload="hello()">
+<h1>DRF</h1>
+<script>
+function hello(){
+alert("Welcome to our Website.")
 }
+</script>
+</body>
+</html>
+
+onresize :- it executes when a webpage is resized. 
+
+* onresize is always written within the body tag opening.
+
+-->L.O.C
+
+<html><head></head>
+<body onload="hello()" onresize0="resized()">
+<h1>DRF</h1>
+<script>
+function resized(){
+alert("You resized the window,you may miss some content.")
+}
+function hello(){
+alert("Welcome to our Website.")
+}
+</script>
+</body>
+</html>
+
+ononline :- it executes when client internet/network is connected or restored.
+
+onoffline :- it executes when client lost the internet/network connection.
+
+-->L.O.C 
+
+<html><head></head>
+<body on offline="hello()" ononline="hello2()">
+<h1 id=""myh1">DRF</h1>
+<script>
+function hello(){
+document.getElementById("myh1").innerHTML="You are Offline.";
+document.getElementById("myh1").style.color="red";
+}
+function hello2(){
+document.getElementById("myh1").innerHTML="DRF";
+document.getElementById("myh1").style.color="green";
+}
+</script>
+</body>
+</html>
+
+onchange :- it is used to manipulate data in input tag. 
+
+Note : to create a table with 4 tr elements with 2 td elements.  we use table>tr*4>td*2;.
+
+<html><head></head>
+<body>
+<form>
+<table>
+<tr>
+<td><label>username</label></td>
+<td><input type="text" name="" id="username" onchange="hello()"><label id="res"></label></td>
+</tr>
+<tr>
+<td><label>password</label></td>
+<td><input type="password" name="" id="password" onchange="hello2()"><label id="res2"></label></td>
+</tr>
+<tr>
+<td><label>phone</label></td>
+<td><input type="text" name="" id="phone"></td>
+</tr>
+<tr>
+<td><button>Submit</td>
+<td><button>Reset</button></td>
+</tr>
+</table>
+</form>
+<script>
+function hello(){
+var uname=document.getElementById("username").value;
+document.getElementById("res").innerHTML="Hello"+uname;
+}
+function hello2(){
+var pwd=document.getElementById("password").value;
+if(pwd.length<=6){
+document.getElementById("res2").innerHTML="Weak Password";
+}
+else{
+document.getElementById("res2").innerHTML="Strong Password";
+}
+}
+</script>
+</body>
+</html>
+
+onmouseover :- it executes when the mouse is on the element is clicked.
+
+onmouseout :- it executes when the mouseclicked on element is removed.
+
+-->L.O.C
+
+<html><head></head>
+<body>
+<img src="https://wallpapers-fenix.eu/download.php?ID=16&absol=141202/235620118.jpg&dwn=985" alt="" height="200" width="200" onmouseover="hello(this)" onmouseout="hello2(this)">
+<script>
+function hello(jk){
+jk.style.height="400px";
+jk.style.width="400px";
+}
+function hello2(jk){
+jk.style.height="200px";
+jk.style.width="200px";
+}
+</script>
+</body>
+</html>
+
+
+onmouseup :- it executes when 
+
+onmousedown :- it executes when 
+
+-->L.O.C 
+
+<html><head></head>
+<body>
+<p id="p" onmousedown="hello()" onmouseup="hello2()">Good evening . Done with the day all set to end up the day. Thank you.</p>
+<script>
+function hello(){
+document.getElementById("p").style.color="red";
+}
+function hello2(){
+document.getElementById("p").style.color="green";
+}
+</script>
+</body>
+</html>
+
+
+onmousemove :- it executes when the cursor is moved generally used for coordinates.
+
+-->L.O.C 
+
+<html>
+<head></head>
+<body>
+<div class="md" onmousemove="hello(event)"></div>
+<h6 id="res"></h6>
+<script>
+function hello(jk){
+var xaxis=jk.clientX;
+var yaxis=jk.clientY;
+document.getElementById("res").innerHTML="Coordinates="+(xaxis,yaxis);
+}
+</script>
+</body>
+</html>
