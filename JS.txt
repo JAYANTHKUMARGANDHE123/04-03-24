@@ -1859,7 +1859,7 @@ Program to print a new  array by removing duplicates in the original array :-
 var arr=[10,1,2,10,5,2,7,2];
 var n=[];
 for(let a of arr){
-if(n.indexof(a)==-1){n.push(a)}
+if(n.indexOf(a)==-1){n.push(a)}
 }
 document.write(n)
 
@@ -1871,24 +1871,21 @@ Program to print a string  of an array with highest number of vowels  :-
 
 -->L.O.C 
 
-let arr=["rakesh","vali","anand","laxman","pradeep","prasad","manoj","manish","jaysheel"];
-new count=[]
-arr.forEach((el)=>{
-count=0;
-vowels=['a','e','i','o','u'];
-str=array.from(el)
-for(let i=0;i<str.length;i++){
-vowels.forEach(vowel=>{if (str[i]===vowel||str[i]===vowel.toUppercase())
-count++
-});
-}
-newcount.push(count+" ")
-})
-//document.write(newcount)
-
-b=newcount[0]
-newcount.forEach((e)=>{if(e>b)b=e})
-ind=newcount.indexof(b)
+ var arr=["rakesh","pradeep","prasad","manoj","laxman","anand","vali","manish","jayanth"];
+        var numarr=[]
+       for(let c of arr){
+        str=c.split('');
+        count=0;
+        str.forEach(n =>{
+            if(n=='a'||n=='e'||n=='i'||n=='o'||n=='u')
+            count++
+        }
+        )
+        numarr.push(count)}
+        document.write(numarr);
+        b=numarr[0]
+numarr.forEach((e)=>{if(e>b)b=e})
+ind=numarr.indexOf(b)
 document.write(arr[ind])
 
 ------------------------------------------------------     End ofsession      --------------------------------------------------------
@@ -1916,7 +1913,7 @@ eg : To print sum of 'n' number of values :-
 function add(...a){
 sum=0;
 for(let i of a){
-sum+=a;
+sum+=i;
 }
 return sum;
 }  
@@ -2001,7 +1998,7 @@ var mobile={
 companyName:"Oneplus",
 modelName:"9RT",
 price:42000,
-process:"SP888"
+process:"SP888",
 mobileFullName:function(){
 return this.companyName+this.modelName;
 }
@@ -2057,10 +2054,10 @@ this.processor=processor;
 }
 let m1=new mobile("Oneplus","9RT",42000,"SP888");
 let m2=new mobile("Samsung","S24Ultra",120000,"SP8 Gen2");
-let m1=new mobile("Google","Pixel8",72000,"Tensor");
+let m3=new mobile("Google","Pixel8",72000,"Tensor");
 let mobileArray=[m1,m2,m3]
 
-for(let a in mobileArray){
+for(let a of mobileArray){
 document.write("<br>")
 if(a.price>70000){
 for(let i in a){
@@ -2089,7 +2086,7 @@ let studentArray=[s1,s2,s3,s4,s5,s6]
 
 for(let a of studentArray){
 document.write("<br>")
-if(a.studentClass="MCA"&&a.studentLocation="HYD"&&a.studentMArks>=80){
+if(a.studentClass=="MCA"&&a.studentLocation=="HYD"&&a.studentMarks>=80){
 for(let i in a){
 document.write(i+":"+a[i]+"<br>")
 }
@@ -2151,7 +2148,7 @@ var str1=string.toLowerCase();
 var str2=string.slice(0,6);
 var str3=string.slice(-13);// supports negative indexing.
 var str4=string.substring(0,6);
-var str5=string.sustring(-13);//Welcome to Javascript (-ve index isn't supported)
+var str5=string.substring(-13);//Welcome to Javascript (-ve index isn't supported)
 
 document.write(str);
 
@@ -2170,7 +2167,7 @@ padStart & padEnd : -
 
 var str="5";
 var str1=str.padStart(4,"*");
-var str2=str.padEnds(4,"*");
+var str2=str.padEnd(4,"*");
 
 document.write(str1+"<br>"+str2);
 
@@ -2216,7 +2213,7 @@ document.write(split+"<br>"+str1+"<br>"+str3)
 L.O.C for length : 
 
 var str="Hello World";
-document.write(str.length()); // 11 
+document.write(str.length); // 11 
 
 
 Javascript program to check if a given string is a palindrome :- 
@@ -2243,7 +2240,7 @@ document.write(str+"is a palindrome")
 else{
 document.write(str+"is not a palindrome");
 }
-
+----------------------------------------------------->>Continue......
 Program to validate  login by taking inputs from user : -
 
 let username=prompt("Enter name");
@@ -2722,3 +2719,5 @@ document.getElementById("res").innerHTML="Coordinates="+(xaxis,yaxis);
 </script>
 </body>
 </html>
+
+----------------------------------------------------------------- End of session ---------------------------------------------------------------------------
