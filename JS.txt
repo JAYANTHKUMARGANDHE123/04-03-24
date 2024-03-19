@@ -2240,7 +2240,8 @@ document.write(str+"is a palindrome")
 else{
 document.write(str+"is not a palindrome");
 }
------------------------------------------------------>>Continue......
+
+
 Program to validate  login by taking inputs from user : -
 
 let username=prompt("Enter name");
@@ -2291,13 +2292,13 @@ Set : set is a collection which stores collection of unique values.
 
 -> add() => to add values to a set.
 
-var s1=new set();
+var s1=new Set();
 s1.add(1);
 s1.add(5);
 s1.add(2);
 s1.add(5);
 
-for(let a in s1){
+for(let a of s1){
 document.write(a+" ");// 1 5 2.
 }
 
@@ -2306,9 +2307,9 @@ document.write(a+" ");// 1 5 2.
 Program to remove duplicates in an array :-
 
 var arr=[5,7,12,30,60,5,12,7];
-var s1=new.set(arr); // creating set from array.
+var s1=new Set(arr); // creating set from array.
 var newarr=[...s1];// creating array from set.
-document.write(newarr); // (i,e. using SPREAD operator)
+document.write(newarr+"<br>"); // (i,e. using SPREAD operator)
 
 for(let a of s1)
 document.write(a+"<br>");
@@ -2367,7 +2368,7 @@ getElementsByClassName : - to access  multiple HTML elements using a same class 
 
 -->L.O.C
 
-<h1 id="hello" class="content > Hello World </h1>
+<h1 id="hello" class="content"> Hello World </h1>
 <p class="content"> world is full of emotions and ego's </p>
 
 <h2 class="content"> TechJobs </h2>
@@ -2378,7 +2379,7 @@ getElementsByClassName : - to access  multiple HTML elements using a same class 
 
 <script>
 
-function ChangeColor() { Var tags = document.getElementsByClassName("content"),
+function changeColor() { var tags = document.getElementsByClassName("content");
 
 tags[0].style.color = "red"
 
@@ -2397,7 +2398,7 @@ getElementsByTagName : - to access multiple values using Tag name.
 
 -->L.O.C
 
-<h1 id="hello" class="content > Hello World </h1>
+<h1 id="hello" class="content"> Hello World </h1>
 <p class="content"> world is full of emotions and ego's </p>
 
 <h2 class="content"> TechJobs </h2>
@@ -2410,7 +2411,7 @@ getElementsByTagName : - to access multiple values using Tag name.
 
 <script>
 
-function ChangeColor() { Var tags = document.getElementsByTagName("h1"),
+function changeColor() { var tags = document.getElementsByTagName("h1");
 
 tags[0].style.color = "red"
 
@@ -2429,7 +2430,7 @@ querySelector :- is use for applying n no.of selectors to access a element by us
 
 -->L.O.C
 
-<h1 id="hello" class="content > Hello World </h1>
+<h1 id="hello" class="content"> Hello World </h1>
 <p class="content"> world is full of emotions and ego's </p>
 
 <h2 class="content"> TechJobs </h2>
@@ -2440,7 +2441,7 @@ querySelector :- is use for applying n no.of selectors to access a element by us
 
 <script>
 
-function ChangeColor() {
+function changeColor() {
 document.querySelector("h1.content#hello").style.color = "red";
 
 }
@@ -2524,10 +2525,10 @@ To add some more functionality look to facebook :-
 
 
 function checkLogin(){
-var uname,upwd;
+var uname,pwd;
 
 uname=document.getElementById("username").value;
-pwd=document.grtElementById("password").value;
+pwd=document.getElementById("password").value;
 
 var ourpwd=uname.slice(0,3)+"123";
 if(pwd==ourpwd){
@@ -2578,7 +2579,7 @@ onresize :- it executes when a webpage is resized.
 -->L.O.C
 
 <html><head></head>
-<body onload="hello()" onresize0="resized()">
+<body onload="hello()" onresize="resized()">
 <h1>DRF</h1>
 <script>
 function resized(){
@@ -2598,8 +2599,8 @@ onoffline :- it executes when client lost the internet/network connection.
 -->L.O.C 
 
 <html><head></head>
-<body on offline="hello()" ononline="hello2()">
-<h1 id=""myh1">DRF</h1>
+<body onoffline="hello()" ononline="hello2()">
+<h1 id="myh1">DRF</h1>
 <script>
 function hello(){
 document.getElementById("myh1").innerHTML="You are Offline.";
@@ -2721,3 +2722,271 @@ document.getElementById("res").innerHTML="Coordinates="+(xaxis,yaxis);
 </html>
 
 ----------------------------------------------------------------- End of session ---------------------------------------------------------------------------
+
+----------------------------------------------------------------- 18/03/24 ---------------------------------------------------------------------------------
+Event Listener in Javascript :-
+Event Listener is a default method we can apply for any DOM element for responding to an event.
+
+-> it has two properties :
+
+1. Event
+
+2. function()
+
+Syntax :- addEventListener("event",function);
+
+-->L.O.C 
+<body>
+<h1 id="myh1">Hello World</h1>
+<button id="btn">Click to Change</button>
+<script>
+document.getElementById("btn").addEventListener('click',fun);
+function fun(){
+    document.getElementById("myh1").innerHTML="Welcome to JavaScript."
+}
+
+
+Using forms with   EventListener () :-
+
+<html><head></head>
+<body>
+<form action="" id="myform">
+<div>
+<label for="">username</label>
+<input type="text" id="username" required pattern="[a-zA-Z]{5,}">
+</div>
+<div>
+<label for="">Password</label>
+<input type="password" id="password" required pattern="[a-zA-Z0-9]{6,}">
+</div>
+<div>
+<button type="submit">Login</button>
+</div>
+<div>
+<label for="" id="res" style="color:white;"></label>
+</div>
+</form>
+<script>
+document.getElementById("myform").addEventListener('submit',(e)=>{
+e.preventDefault();
+var uname=document.getElementById("username").value;
+var pwd=document.getElementById("password").value;
+if(pwd==uname.slice(0,3)+"123"){
+document.getElementById("res").innerHTML="Login Successful"
+}
+else{
+document.getElementById("res").innerHTML="Login Failed"
+}
+})
+</script>
+</body>
+</html>
+
+
+To add eye icon for password :-
+
+<html><head></head>
+<body>
+<form action="" id="myform">
+<div>
+<label for="">username</label>
+<input type="text" id="username" required pattern="[a-zA-Z]{5,}">
+</div>
+<div>
+<label for="">Password</label>
+<input type="password" id="password" required pattern="[a-zA-Z0-9]{6,}">
+<button class="pwdview" id="viewpwd" type="button"><i class="fa fa-eye"></i></button>
+</div>
+<div>
+<button type="submit">Login</button>
+</div>
+<div>
+<label for="" id="res" style="color:white;"></label>
+</div>
+</form>
+<script>
+document.getElementById("viewpwd").addEventListener('click',()=>{
+var pwd=document.getElementById("password");
+if(pwd.type=="text"){
+pwd.type="password"
+}
+else{
+pwd.type="text"
+}
+})
+</script>
+</body>
+</html>
+
+
+-->L.O.C for using open and close eye to view the password using images :-
+
+
+<img src="https://static.vecteezy.com/system/resources/previews/006/086/018/original/preview-show-interface-icon-free-vector.jpg" id="pwdicon">
+var pwdicon=document.getElementById("pwdicon");
+if(pwd.type=="text"){
+pwd.type="password";
+pwdicon.src="https://cdns.iconmonstr.com/wp-content/releases/preview/2018/240/iconmonstr-eye-off-thin.png"
+}
+else{
+pwdicon.src="https://static.vecteezy.com/system/resources/previews/006/086/018/original/preview-show-interface-icon-free-vector.jpg"
+})
+
+For dropdowns :-
+
+-->L.O.C
+
+<label for=""> Select City</label>
+<select id="city">
+<option value='3000'>Vizag</option>
+<option value='5000'>Hyderabad</option>
+<option value='4000'>Chennai</option>
+<option value='8000'>Banglore</option>
+<option value='5000'>Chandigarh</option>
+</select>
+
+var city=document.getElementById("city").value;
+
+
+For radio buttons using querySelector :-
+
+-->L.O.C
+
+<div>
+<label for="">Gender</label>
+<input type="radio" name="gender" id="" value="Male">Male
+<input type="radio" name="gender" id="" value="Female">Female
+</div>
+
+J.S 
+
+var gen=document.querySelector("input[name='gender']:checked").value;
+
+
+
+Timing Functions in JS :-
+
+Timing functions used to execute a piece of code at certain interval or after certain time.
+
+->we have two types :
+
+1. setInterval
+
+2. setTimeout
+
+setInterval : is used to execute a function for every time interval, mainly it has two properties,time interval and a function to execute .
+
+
+-->L.O.C 
+
+<script>
+function myfun(){
+document.write("Hello")
+}
+
+setInterval(myfun,3000);//setInterval(function,time in millisec)
+</script>
+
+
+-->L.O.C   to print local time :
+
+<body>
+<h1 id="printtime"></h1><br>
+<script>
+function myfun(){
+var d=new Date();
+document.getElementById("printtime").innerHTML=d.toLocaleTimeString();
+}
+
+setInterval(myfun,1000)
+</script>
+</body>
+
+
+-->L.O.C for Timer :-
+
+<body>
+<h1 id="printtime"></h1><br>
+<button onclick="startfun()">start</button>
+<button onclick="stopfun()">stop</button>
+<script>
+var res;
+function myfun(){
+var d=new Date();
+document.getElementById("printtime").innerHTML=d.LocaleTimeString();
+}
+
+funcion startfun(){
+res=setInterval(mufun,1000);
+}
+
+function stopfun(){
+clearInterval(res);
+}
+</script>
+</body>
+
+
+setTimeout :- we can execute a piece of code after a certain time-period.
+
+-->L.O.C 
+
+<body>
+<h1 id="printtime"></h1>
+<script>
+function myfun(){
+document.getElementById("printtime").innerHTML="Welcome to Javascript.";
+}
+
+setTimeout(myfun,3000);
+
+</script>
+</body>
+
+-->L.O.C for setTimeout using buttons :-
+
+<body>
+<h1 id="printtime"></h1>
+<button onclick="setTimeout(myfun,3000)">Clickme</button>
+<script>
+function myfun(){
+document.getElementById("printtime").innerHTML="Welcome to Javasscript.";
+}
+</script>
+</body>
+
+
+Task : Write a Javascript program to print Stop Clock :-
+
+<html>
+<head></head>
+<body>
+<h1 id="print"></h1>
+<button onclick="startfun()">start</button>
+<button onclick="stopfun()">stop</button>
+<script>
+var sec=0,min=0,hrs=0,res;
+startfun(){
+res=setInterval(calculateTimer,1000);
+}
+
+calculateTimer(){
+sec++;
+if(sec==60){
+min++;
+sec=0;
+}
+if(min==60){
+hrs++;
+min=0;
+}
+}
+
+function stopfun(){
+clearInterval(res);
+}
+
+document.getElementById("print").innerHTML=`${hrs}:${min}:${sec}`;
+</script>
+</body>
+</html>
