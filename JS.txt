@@ -2823,6 +2823,7 @@ pwd.type="text"
 
 
 <img src="https://static.vecteezy.com/system/resources/previews/006/086/018/original/preview-show-interface-icon-free-vector.jpg" id="pwdicon">
+<script>
 var pwdicon=document.getElementById("pwdicon");
 if(pwd.type=="text"){
 pwd.type="password";
@@ -2830,7 +2831,7 @@ pwdicon.src="https://cdns.iconmonstr.com/wp-content/releases/preview/2018/240/ic
 }
 else{
 pwdicon.src="https://static.vecteezy.com/system/resources/previews/006/086/018/original/preview-show-interface-icon-free-vector.jpg"
-})
+})</script>
 
 For dropdowns :-
 
@@ -2913,11 +2914,11 @@ setInterval(myfun,1000)
 var res;
 function myfun(){
 var d=new Date();
-document.getElementById("printtime").innerHTML=d.LocaleTimeString();
+document.getElementById("printtime").innerHTML=d.toLocaleTimeString();
 }
 
-funcion startfun(){
-res=setInterval(mufun,1000);
+function startfun(){
+res=setInterval(myfun,1000);
 }
 
 function stopfun(){
@@ -2950,7 +2951,7 @@ setTimeout(myfun,3000);
 <button onclick="setTimeout(myfun,3000)">Clickme</button>
 <script>
 function myfun(){
-document.getElementById("printtime").innerHTML="Welcome to Javasscript.";
+document.getElementById("printtime").innerHTML="Welcome to Javascript.";
 }
 </script>
 </body>
@@ -2980,13 +2981,161 @@ if(min==60){
 hrs++;
 min=0;
 }
+
+document.getElementById("print").innerHTML=`${hrs}:${min}:${sec}`;
 }
 
 function stopfun(){
 clearInterval(res);
 }
 
-document.getElementById("print").innerHTML=`${hrs}:${min}:${sec}`;
 </script>
 </body>
 </html>
+
+------------------------------------------------------------------ End of session --------------------------------------------------------------------------
+
+-------------------------------------------------------------------  19/03/24  -----------------------------------------------------------------------------
+
+
+Callback : Callback is a function which is passed to another function as a parameter.
+
+-> Callback is used to handle async functionality in Javascript.
+
+-> The  function which accepts another function as parameter is called as higher order function.
+
+* setTimeout is a best example of callback.
+
+** A function which expects a function as an argument/parameter is known as higher order function.
+
+Syntax :
+
+function A(myfun){
+
+}
+
+function B{
+
+}
+A(B); //A- higher order function & B - is a callback .
+
+Program without CallBack :- 
+
+<script>
+function hello(){
+document.write("Hello World");
+}
+
+function greet(){
+document.write("Good Morning!....");
+}
+
+setTimeout(hello,5000);
+greet();
+</script>
+
+
+Program using CallBack :-
+
+function hello(myfun){
+document.write("Hello World");
+myfun(); //callback
+}
+
+function greet(){
+document.write("Good Morning!..");
+}
+
+setTimeout(hello,5000,greet);
+
+Program using callback with Timeout :-
+
+<script>
+function hello(myfun){
+document.write("Hello World");
+myfun();// 
+setTimeout(myfun,3000);
+}
+function greet(){
+document.write("Good Morning!...");
+}
+
+setTimeout(hello,5000,greet);
+
+</script>
+
+
+Promises: -
+
+Promise is an object to handle async functionality in Javascript.
+
+-> Promise has 3 different states 
+
+1. Pending
+
+2. Fulfill
+
+3. Reject
+
+API :- Application Programming Interface , is the heart of the web application that acts as the intermediate connection between frontend and the database to carry data.
+
+-> API are of two types :
+   
+   1. SOAP - Simple Object Access Protocol. => deals with XML .
+
+   2. REST - Representational State Transfer. => deals with XML,JSON,TEXT,HYPERTEXT.
+
+
+Methods in promises : -
+
+-> then() : when the promises is successful (or) fulfilled.
+
+-> catch() : when the promises is rejected.
+
+-> finally() : It will be executed even when the promise is fulfilled or rejected at the end.
+
+Program using Promises :- 
+
+** Promise object takes two parameters , 1. Resolve 2. Reject.
+
+** promise object has a function which is expecting two parameters i,e. ,first is to fulfill the promise and second is to reject the promise.
+
+
+-->L.O.C for Promises :-
+
+<script>
+let age=prompt("Enter age");
+let ageCheck=new Promise((resolve,reject)=>{
+if(age>18){
+resolve("Eligible to vote")
+}
+else{
+reject("not eligible")
+}
+});
+
+ageCheck
+.then((msg)=>{document.write(msg)})
+.catch((msg)=>{document.write(msg)})
+.finally(()=>{document.write("<br>Thank You")})
+
+</script>
+
+Without using any variable :- 
+
+
+<script>
+let age=prompt("Enter age");
+new Promise((resolve,reject)=>{
+if(age>18){
+resolve("Eligible to vote")
+}
+else{
+reject("not eligible")
+}
+})
+.then((msg)=>{document.write(msg)})
+.catch((msg)=>{document.write(msg)})
+.finally(()=>{document.write("<br>Thank You")})
+
+</script>
