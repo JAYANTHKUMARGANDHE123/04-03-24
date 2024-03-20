@@ -3291,7 +3291,7 @@ DELETE => to delete records in database.
 Jokes.html : Using fetch 
 
 <script>
-fetch('https://apichucknorris.io/jokes/random')
+fetch('https://api.chucknorris.io/jokes/random')
     .then((data)=>data.json())
     .then((msg)=>document.write(msg.value)
     .catch((err)=>document.write(err))
@@ -3304,7 +3304,7 @@ fetch('https://apichucknorris.io/jokes/random')
 <button onclick="getJoke()">NewJoke</button>	
 <script>
 function getJoke(){
-  fetch('https://apichucknorris.io/jokes/random')
+  fetch('https://api.chucknorris.io/jokes/random')
   .then((data)=>data.json())
   .then((msg)=>document.getElementById("res").innerHTML=msg.value)
   .catch((err)=>document.write(err))
@@ -3364,4 +3364,34 @@ else{
 document.write("Invalid OTP");
 }
 </script>
+</body>
+
+
+Validating OTP with otp entered by user :-
+
+
+<body onload="generateOTP()">
+<h1 id="h1"></h1>
+Enter OTP<input type="text" id="enterotp">
+<button onclick="check()">Verify</button>
+<h2 id="h2"></h2>
+<script>
+var otp="";
+function generateOTP(){
+for(i=0;i<=5;i++){
+otp+=Math.floor(Math.random()*10)
+}
+document.getElementById("h1").innerHTML=otp;
+}
+function  check(){
+OTP=document.getElementById("enterotp").value;
+if(otp==OTP){
+document.getElementById("h2").innerHTML="OTP verified ";
+document.getElementById("h2").style.color="green";
+}
+else{
+document.getElementById("h2").innerHTML="Invalid OTP";
+document.getElementById("h2").style.color="red";
+}}
+</script>   
 </body>
