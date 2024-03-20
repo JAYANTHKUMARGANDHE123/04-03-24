@@ -3139,3 +3139,229 @@ reject("not eligible")
 .finally(()=>{document.write("<br>Thank You")})
 
 </script>
+
+------------------------------------------------------------------- End of session ------------------------------------------------------------------------
+
+--------------------------------------------------------------------   20/03/24    ------------------------------------------------------------------------
+
+                                             -:: Classes ::-
+
+Class :- class is a blueprint to create an object .
+
+-> It can have methods and constructor.
+
+-> Introduced in ES6.
+
+-> functional constructor and classes both are used to create objects but classes can implement OOPS features like inheritance,method overloading .....
+
+-> Every JS class must have one constructor.
+
+-> Javascipt classes doesnot support hoisting (we cannot use a class before its creation).
+
+
+Constructor :- 
+
+constructor is the method in class which can create an object for the class.
+
+-> Mainly used to assign the properties for an object.
+
+
+OPPS.html :- 
+
+<script>
+
+class mobile{
+constructor(mobileName,mobileCompany,mobilePrice){
+this.mobileName=mobileName;
+this.mobileCompany=mobileCompany;
+this.mobilePrice=mobilePrice;
+}
+
+printMobile(){
+document.write(`${this.mobileName}from${this.mobileCompany}price of ${this.mobilePrice}.`)
+}
+}
+
+var m1=new mobile("PIXEL8","Google","72000");
+m1.printMobile();
+</script>
+
+Expected Output : PIXEL8 from Google price of 72000.
+
+
+Inheritance :-  Inheritance refers to as process of a child  class accessing all the properties from its parent class.
+
+-> to create relation between two classes , a keyword 'extends' is used.
+
+** this is a keyword used for accessing local values from same class while super is a keyword used for accessing values from its parent class.
+
+->L.O.C for Inheritance :
+
+<script>
+class mobile{
+  constructor(mobileName,mobileCompany,mobilePrice){
+   this.mobileName=mobileName;
+   this.mobileCompany=mobileCompany;
+   this.mobilePrice=mobilePrice;
+}
+printMobile(){
+document.write(`${this.mobileName}from${this.mobileCompany}pricing${this.mobilePrice}`)
+}
+}
+
+class bigc extends mobile{
+ constructor(mobileName,mobileCompany,mobilePrice){
+ super(mobileName,mobileCompany,mobilePrice);
+}
+}
+
+var m1 =new bigc("PIXEL8","Google","72000");
+m1.printMobile();
+</script>
+
+async and await :-
+
+async function : A function which returns a Promise is called as asynchronous function.
+
+-> to create async function in JS we use 'async' keyword.
+
+->L.O.C for async :-
+
+<script>
+async function hello(){
+console.log("Hello this is async function");
+return Promise.reject("success");
+}
+
+hello()
+.then((msg)=>{console.log(msg)})
+//.catch((msg)=>{console.log("rejection"+msg)})       
+</script>
+
+Expected Output : Hello this is async function
+                  error promise -success
+
+Output on uncommenting : Hello this is async function
+                         rejection success
+
+
+await : await is a keyword used to wait for the result of the Promise;
+
+-> await keyword must be used only in async function.
+
+
+--> L.O.C for async function using await : 
+
+<script>
+let p1=new Promise((res,rej)=>{
+   setTimeout(()=>{
+      res("success")
+},6000)
+})
+
+async function hello(){
+let result=await p1;
+ console.log(result);
+ console.log("Thank you");
+}
+
+hello();
+</script>
+
+Expected Output without await : Promise {pending}
+                       		Thank you
+
+Expected Output with await : success
+                       	     Thank you
+
+
+fetch :- fetch method in JS is used to make an XMLHTTPRequest to an API to POST/GET the data.
+
+http : is a set of rules to transfer data between Client and Server and has many methods like 
+
+GET => to retrive data from database.
+
+POST => to post new data to database.
+
+PUT => to update an existing data in  database.
+
+DELETE => to delete records in database.
+
+
+Jokes.html : Using fetch 
+
+<script>
+fetch('https://apichucknorris.io/jokes/random')
+    .then((data)=>data.json())
+    .then((msg)=>document.write(msg.value)
+    .catch((err)=>document.write(err))
+</script>
+
+-> L.O.C for Joke creation using fetch by onclick :
+
+<body>
+<h1 id="res"></h1>
+<button onclick="getJoke()">NewJoke</button>	
+<script>
+function getJoke(){
+  fetch('https://apichucknorris.io/jokes/random')
+  .then((data)=>data.json())
+  .then((msg)=>document.getElementById("res").innerHTML=msg.value)
+  .catch((err)=>document.write(err))
+}
+</script>
+</body>	
+
+
+Math Library : used for performing mathematical operations.
+
+Math.pow(x,y) => x power of y.
+Math.sqrt() => square root of number.
+Math.floor() => decreased value.
+Math.ciel() => increased value.
+Math.round() => increase or decrease based on value (0.5).
+Math.max() => maximum value.
+Math.min() => minimum value.
+Math.sin() => sine function.
+Math.random() => generates a value between 0 and 1 randomly.
+
+Program to print max value in an array : 
+
+<script>
+var num=[10,2,5,4,30,55];
+document.write(Math.max(...num));
+</script>
+
+Program to generate OTP :-
+
+<script>
+var otp="";
+for(i=0;i<=5;i++){
+otp+=Math.floor(Math.random()*10)
+}
+document.write(otp);
+</script>
+
+
+Validating OTP with otp entered by user :
+
+<body onload="generateOTP()">
+<h1 id="h1"></h1>
+<script>
+var otp="";
+function generateOTP(){
+for(i=0;i<=5;i++){
+otp+=Math.floor(Math.random()*10)
+}
+document.getElementById("h1").innerHTML=otp;
+}
+Enter OTP<input type="text" id="enterotp">
+OTP=document.getElementById("enterotp").value;
+if(otp==OTP){
+document.write("OTP verified");
+}
+else{
+document.write("Invalid OTP");
+}
+</script>
+</body>
