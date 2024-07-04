@@ -160,7 +160,7 @@ VARIABLES: is a container that stores a value and retrives while execution of pr
 
 Identifiers: are user defined keywords to create a variable,class,function,or a method,...
 
-1.it may contain alpha-numaric keys.[a-z,0-9].
+1.it may contain alpha-numeric keys.[a-z,0-9].
 2.cannot start with a digit.
 3.it takes special characters like '_','$'.
 4.names are case sensitive(camelCase)
@@ -996,7 +996,7 @@ Program 1 2 3 4
 Program for pattern : * *
                       * * *
                       * * * *
- -->L.O.C	      * * * * * 
+ -->L.O.C	          * * * * * 
 
 
 for(let i=1;i<=5;i++)
@@ -1826,9 +1826,10 @@ Program to calculate number of vowels in a string :-
 
 str=prompt("Enter a text");//jayanth
 let arr=str.split('')
-str.forEach((itr)=>{
+count=0;
+arr.forEach((itr)=>{
 if(itr=='a'||itr=='e'||itr=='i'||itr=='o'||itr=='u'||itr=='A'||itr=='E'||itr=='I'||itr=='O'||itr=='U')
-count++
+count++;
 })
 document.write(count)
 
